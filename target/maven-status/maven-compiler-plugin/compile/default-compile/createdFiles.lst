@@ -1,0 +1,10 @@
+controller\ClienteServlet.class
+model\DatabaseConnection.class
+model\Cargo.class
+model\Cliente.class
+dao\TipoDocumentoDAO.class
+model\TipoDocumento.class
+dao\ClienteDAO.class
+dao\UsuarioDAO.class
+model\Usuario.class
+dao\CargoDAO.class
