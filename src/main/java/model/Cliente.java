@@ -11,19 +11,28 @@ import java.util.Date;
  */
 public class Cliente {
     
+    private int id_Cliente;
     private int identificacion;
-    private int idTipoIdentificacion;
-    private String nombre1;
-    private String nombre2;
-    private String apellido1;
-    private String apellido2;
+    private int id_Tipo_Identificacion;
+    private String nombre_1;
+    private String nombre_2;
+    private String apellido_1;
+    private String apellido_2;
     private String domicilio;
     private String telefono;
     private String email;
     private boolean estado;
-    private Date fechaRegistro;
+    private Date fecha_Registro;
 
     // Getters y Setters
+    public int getid_Cliente() {
+        return id_Cliente;
+    }
+
+    public void setid_Cliente(int id_Cliente) {
+        this.id_Cliente = id_Cliente;
+    }
+    
     public int getIdentificacion() {
         return identificacion;
     }
@@ -33,43 +42,43 @@ public class Cliente {
     }
 
     public int getIdTipoIdentificacion() {
-        return idTipoIdentificacion;
+        return id_Tipo_Identificacion;
     }
 
-    public void setIdTipoIdentificacion(int idTipoIdentificacion) {
-        this.idTipoIdentificacion = idTipoIdentificacion;
+    public void setIdTipoIdentificacion(int id_Tipo_Identificacion) {
+        this.id_Tipo_Identificacion = id_Tipo_Identificacion;
     }
 
     public String getNombre1() {
-        return nombre1;
+        return nombre_1;
     }
 
-    public void setNombre1(String nombre1) {
-        this.nombre1 = nombre1;
+    public void setNombre1(String nombre_1) {
+        this.nombre_1 = nombre_1;
     }
 
-    public String getNombre2() {
-        return nombre2;
+    public String getNombre_2() {
+        return nombre_2;
     }
 
-    public void setNombre2(String nombre2) {
-        this.nombre2 = nombre2;
+    public void setNombre_2(String nombre_2) {
+        this.nombre_2 = nombre_2;
     }
 
-    public String getApellido1() {
-        return apellido1;
+    public String getApellido_1() {
+        return apellido_1;
     }
 
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
+    public void setApellido1(String apellido_1) {
+        this.apellido_1 = apellido_1;
     }
 
-    public String getApellido2() {
-        return apellido2;
+    public String getApellido_2() {
+        return apellido_2;
     }
 
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
+    public void setApellido2(String apellido_2) {
+        this.apellido_2 = apellido_2;
     }
 
     public String getDomicilio() {
@@ -104,12 +113,12 @@ public class Cliente {
         this.estado = estado;
     }
 
-    public Date getFechaRegistro() {
-        return fechaRegistro;
+    public Date getfecha_Registro() {
+        return fecha_Registro;
     }
 
     public void setFechaRegistro(Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+        this.fecha_Registro = fechaRegistro;
     }
     
     

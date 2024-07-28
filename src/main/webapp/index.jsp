@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>Tipo de Identificacion</th>
+            <th>Tipo de Identificación</th>
             <th>Primer Nombre</th>
             <th>Segundo Nombre</th>
             <th>Primer Apellido</th>

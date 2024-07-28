@@ -13,19 +13,23 @@ import java.sql.SQLException;
  */
 public class DatabaseConnection {
 
-public static final String Server = "";
-public static final String User = "";
-public static final String Password = "";
 
-public static Connection connect(){
-    
-    Connection conn = null;
+    public static Connection connect(){
+        
+        String Server = "jdbc:mysql://localhost:3306/supermercado";
+        String User = "especializacion";
+        String Password = "qazwsx12!";
+        Connection conn = null;
         try {
+            // Cargar el driver de MySQL
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(Server, User, Password);
             System.out.println("Connection to MySQL has been established.");
+        } catch (ClassNotFoundException e) {
+            System.out.println("MySQL JDBC Driver not found: " + e.getMessage());
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Connection failed: " + e.getMessage());
         }
         return conn;
-}   
+    }
 }

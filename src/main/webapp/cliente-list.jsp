@@ -4,8 +4,8 @@
     Author     : gcardenas
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +17,7 @@
     <table border="1">
         <tr>
             <th>ID</th>
+            <th>Identificación</th>
             <th>Tipo de Identificación</th>
             <th>Primer Nombre</th>
             <th>Segundo Nombre</th>
@@ -31,20 +32,21 @@
         </tr>
         <c:forEach var="cliente" items="${listaClientes}">
             <tr>
+                <td>${cliente.id_Cliente}</td>
                 <td>${cliente.identificacion}</td>
-                <td>${cliente.idTipoIdentificacion}</td>
-                <td>${cliente.nombre1}</td>
-                <td>${cliente.nombre2}</td>
-                <td>${cliente.apellido1}</td>
-                <td>${cliente.apellido2}</td>
+                <td>${cliente.id_Tipo_Identificacion}</td>
+                <td>${cliente.nombre_1}</td>
+                <td>${cliente.nombre_2}</td>
+                <td>${cliente.apellido_1}</td>
+                <td>${cliente.apellido_2}</td>
                 <td>${cliente.domicilio}</td>
                 <td>${cliente.telefono}</td>
                 <td>${cliente.email}</td>
                 <td>${cliente.estado}</td>
-                <td>${cliente.fechaRegistro}</td>
+                <td>${cliente.fecha_Registro}</td>
                 <td>
-                    <a href="ClienteServlet?action=edit&id=${cliente.identificacion}">Editar</a>
-                    <a href="ClienteServlet?action=delete&id=${cliente.identificacion}">Eliminar</a>
+                    <a href="ClienteServlet?action=edit&id=${cliente.id_Cliente}">Editar</a>
+                    <a href="ClienteServlet?action=delete&id=${cliente.id_Cliente}">Eliminar</a>
                 </td>
             </tr>
         </c:forEach>
