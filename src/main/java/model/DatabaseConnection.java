@@ -17,8 +17,8 @@ public class DatabaseConnection {
     public static Connection connect(){
         
         String Server = "jdbc:mysql://localhost:3306/supermercado";
-        String User = "especializacion";
-        String Password = "qazwsx12!";
+        String User = "root";
+        String Password = "123456789";
         Connection conn = null;
         try {
             // Cargar el driver de MySQL
