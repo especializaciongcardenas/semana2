@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Lista de Clientes</h1>
-    <a href="ClienteServlet?action=add">Agregar Nuevo Cliente</a>
+    <a href="ClienteServlet?action=add">ALEXANDER</a>
     <table border="1">
         <tr>
             <th>ID</th>

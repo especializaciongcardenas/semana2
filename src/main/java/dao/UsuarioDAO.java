@@ -113,4 +113,38 @@ public class UsuarioDAO {
         }
     }
     
+    public Usuario getUsuarioByEmailAndPassword(String identificacion, String password) {
+        String sql = "SELECT * FROM Usuario WHERE Identificacion = ? AND Password = ?";
+        Usuario usuario = null;
+
+        try (Connection conn = DatabaseConnection.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, identificacion);
+            pstmt.setString(2, password);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                usuario = new Usuario();
+                usuario.setIdUsuario(rs.getInt("Id_Usuario"));
+                usuario.setIdentificacion(rs.getInt("Identificacion"));
+                usuario.setIdTipoIdentificacion(rs.getInt("Id_Tipo_Identificacion"));
+                usuario.setIdCargo(rs.getInt("Id_Cargo"));
+                usuario.setNombre1(rs.getString("Nombre_1"));
+                usuario.setNombre2(rs.getString("Nombre_2"));
+                usuario.setApellido1(rs.getString("Apellido_1"));
+                usuario.setApellido2(rs.getString("Apellido_2"));
+                usuario.setDomicilio(rs.getString("Domicilio"));
+                usuario.setTelefono(rs.getString("Telefono"));
+                usuario.setEmail(rs.getString("Email"));
+                usuario.setEstado(rs.getBoolean("Estado"));
+                usuario.setPassword(rs.getString("Password"));
+                usuario.setFechaRegistro(rs.getTimestamp("Fecha_Registro"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return usuario;
+    }
+    
 }

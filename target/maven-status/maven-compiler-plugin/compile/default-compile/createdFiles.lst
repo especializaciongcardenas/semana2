@@ -1,4 +1,5 @@
 controller\ClienteServlet.class
+controller\UsuarioServlet.class
 model\DatabaseConnection.class
 model\Cargo.class
 model\Cliente.class
@@ -8,3 +9,4 @@ dao\ClienteDAO.class
 dao\UsuarioDAO.class
 model\Usuario.class
 dao\CargoDAO.class
+controller\HomeServlet.class

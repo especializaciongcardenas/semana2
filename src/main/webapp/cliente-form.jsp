@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="card sombra col-md-12 p-5">
                         <div class="card col-md-6 mx-auto text-center mb-5 sombra">
-                            <h1 class="text-center">${cliente == null ? 'Agregar' : 'Editar'} Cliente</h1>
+                            <h1 class="text-center">Información del cliente</h1>
                         </div>
                         <form action="ClienteServlet?action=${cliente == null ? 'insert' : 'update'}" method="post" autocomplete="off">
                             <c:if test="${cliente != null}">
@@ -28,85 +28,58 @@
                             </c:if>
                             <div class="row text-center mb-4">
                                 <div class="col-md-2">
-                                    <label for="nombre_1" class="col-form-label">Nombre 1: <span
-                                                class="text-danger">*</span></label>
+                                    <label for="nombre_1" class="col-form-label">Nombre 1:</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="nombre_1" name="nombre_1" class="form-control" value="${cliente.nombre_1}">
+                                    <input disabled="true" type="text" id="nombre_1" name="nombre_1" class="form-control" value="${cliente.nombre1}">
                                 </div>
                                 <div class="col-md-2">
                                     <label for="nombre_2" class="col-form-label">Nombre 2: </label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="nombre_2" name="nombre_2" class="form-control" value="${cliente.nombre_2}">
+                                    <input disabled="true" type="text" id="nombre_2" name="nombre_2" class="form-control" value="${cliente.nombre_2}">
                                 </div>
                             </div>
                             <div class="row text-center mb-4">
                                 <div class="col-md-2">
-                                    <label for="apellido_1" class="col-form-label">Apellido 1: <span
-                                                class="text-danger">*</span></label>
+                                    <label for="apellido_1" class="col-form-label">Apellido 1:</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="apellido_1" name="apellido_1" class="form-control" value="${cliente.apellido_1}">
+                                    <input disabled="true" type="text" id="apellido_1" name="apellido_1" class="form-control" value="${cliente.apellido_1}">
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="apellido_2" class="col-form-label">Apellido 2: <span
-                                                class="text-danger">*</span></label>
+                                    <label for="apellido_2" class="col-form-label">Apellido 2:</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="apellido_2" name="apellido_2" class="form-control" value="${cliente.apellido_2}">
+                                    <input disabled="true" type="text" id="apellido_2" name="apellido_2" class="form-control" value="${cliente.apellido_2}">
                                 </div>
                             </div>
                             <div class="row text-center mb-4">
                                 <div class="col-md-2">
-                                    <label for="tipo_identificacion" class="col-form-label">Tipo Identificacion: <span
-                                                class="text-danger">*</span></label>
+                                    <label for="identificacion" class="col-form-label">Identificación:</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <select class="form-select" id="id_Tipo_Identificacion">
-                                        <option value="0" selected>Seleccione una opción</option>
-                                        <option value="${cliente.id_Tipo_Identificacion}">Tarjeta de Identidad</option>
-                                        <option value="${cliente.id_Tipo_Identificacion}">Cedula de Ciudadania</option>
-                                    </select>
+                                    <input disabled="true" type="text" id="identificacion" class="form-control" value="${cliente.identificacion}">
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="identificacion" class="col-form-label">Identificación: <span
-                                                class="text-danger">*</span></label>
+                                    <label for="domicilio" class="col-form-label">Domicilio:</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="identificacion" class="form-control" value="${cliente.identificacion}">
+                                    <input disabled="true" type="text" id="domicilio" class="form-control" value="${cliente.domicilio}">
                                 </div>
                             </div>
-                            <div class="row text-center mb-4">
+                            <div class="row text-center mb-4">                                
                                 <div class="col-md-2">
-                                    <label for="domicilio" class="col-form-label">Domicilio: <span
-                                                class="text-danger">*</span></label>
+                                    <label for="email" class="col-form-label">Email:</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="domicilio" class="form-control" value="${cliente.domicilio}">
+                                    <input disabled="true" type="email" id="email" class="form-control" value="${cliente.email}" placeholder="ejemplo@ejemplo.com">
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="email" class="col-form-label">Email: <span
-                                                class="text-danger">*</span></label>
+                                    <label for="telefono" class="col-form-label">Teléfono:</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="email" id="email" class="form-control" value="${cliente.email}" placeholder="ejemplo@ejemplo.com">
-                                </div>
-                            </div>
-                            <div class="row text-center mb-4">
-                                <div class="col-md-2">
-                                    <label for="telefono" class="col-form-label">Teléfono: <span
-                                                class="text-danger">*</span></label>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" id="telefono" class="form-control" value="${cliente.telefono}">
-                                </div>
-                            </div>
-                            <div class="row text-center mb-4">
-                                <div class="col-md-12">
-                                    <input type="button" value="${cliente == null ? 'Registrar' : 'Actualizar'}" class="btn btn-outline-success col-md-4"
-                                           onclick="validarFormulario()">
-                                    <button id="btn_accion" style="display: none" type="submit"></button>
+                                    <input disabled="true" type="text" id="telefono" class="form-control" value="${cliente.telefono}">
                                 </div>
                             </div>
                         </form>                  
